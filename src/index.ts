@@ -30,4 +30,10 @@ app.get('/total', function (req, res) {
 }
 );
 
+app.get('/', function (req: express.Request, res: express.Response) {
+  const alumnes: any[] = ['Pepito', 'Juanito', 'Jaimito', 'Pablito', 'Pedrito'];
+  const uf: any[] = ['M8', 'M7', 'M6', 'M09', 'M10', 'M11', 'M12', 'M13'];
+  res.send({alumnes: alumnes, uf: uf});
+});
+
 app.listen(process.env.HOST_PORT, () => console.log(`Tamo escuxando el puerto ${process.env.HOST_PORT}!`));
